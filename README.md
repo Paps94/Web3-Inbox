@@ -25,7 +25,7 @@ After cloning the repository and directing yourself to it you will need to do a 
 
 <code>npm init</code>
 
-npm install solc web3 mocha ganache-cli @truffle/hdwallet-provider
+<code>npm install solc web3 mocha ganache-cli @truffle/hdwallet-provider</code>
 
 Update your test script in the package.json file to be 
   "test": "mocha"
@@ -47,10 +47,10 @@ NOTE***
 
 
 Then you need to run the compile script using the javascript file called 'compile'
-node compile.js
+<code>node compile.js</code>
 
 The deploy script using.. you guessed it the js file called 'deploy' (which is where you updated your infura link to Rinkbey and Metamask Mnemonic also switched to Rinkeby)
-node deploy.js
+<code>node deploy.js</code>
 
 That should generate the following:
   Attempting to deploy from account 0x438...
@@ -59,13 +59,13 @@ Followed by a
   Contract deployed to 0x8643...
 
 You can then go to:
-  -> https://rinkeby.etherscan.io/
+  -> <code> https://rinkeby.etherscan.io/ </code>
   
   enter the address you just got and search for the contract
   ![](images/EtehrScan.jpg)
 
 If you want to then test the Contract then what you have to do is go to
-  -> http://remix.ethereum.org
+  -> <code> http://remix.ethereum.org </code>
   -> Create a new file and call it "Inbox.sol"
   -> Go to "Deploy & run transactions"
   -> Make sure you select "Injected Web3" (then a metamask verification will appear just accept to connect)
@@ -81,7 +81,7 @@ After doing that you can go back to Etherscan and see your transaction and/or re
 Oh forgot to mention that if you want some FAKE ether for your testing cause setting a new message will cost you gas you need to do the following:
 
 Go to:
-  -> https://faucets.chain.link/rinkeby
+  -> <code> https://faucets.chain.link/rinkeby </code>
 
     Enter your wallet address (testnet account address) - Metamask
     Check 0.1 test ETH
@@ -90,13 +90,3 @@ Go to:
     Click Send Request
 
 Do this a couple of times to get some FAKE ether sent to your Metamask
-
-
-  
-
-
-
-  
-  
-
-  
