@@ -23,7 +23,7 @@ How do I then test this?
 
 After cloning the repository and directing yourself to it you will need to do a few things!
 
-npm init
+<code>npm init</code>
 
 npm install solc web3 mocha ganache-cli @truffle/hdwallet-provider
 
