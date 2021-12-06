@@ -48,7 +48,7 @@ provider = new HDWalletProvider(
 
 <h3>Note</h3>
   At the point of writing this. If you lost your MetaMask Mnemonic the only thing you can do is remove the extension all together and start again and for the love of God and all that is holy please make sure you are <bold>NOT</bold> on the Mainnet and instead you are on a testnet like Rinkeby! VERY IMPORTANT!!!
-  
+
   ![](images/Metamask.png)
 
   When creating your infura account make sure you switch away from the Mainnet and into the Rinkeby Network
@@ -80,6 +80,7 @@ You can then go to:
 If you want to then test the Contract then what you have to do is go to
   - <code> http://remix.ethereum.org </code>
   - Create a new file and call it "Inbox.sol"
+  - Paste the content of Inbox.sol to the newly created file
   - Go to "Deploy & run transactions"
   - Make sure you select "Injected Web3" (then a metamask verification will appear just accept to connect)
   - Your Metamask account should appear under "Account"
