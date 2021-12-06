@@ -47,8 +47,7 @@ provider = new HDWalletProvider(
 ```
 
 <h3>Note</h3>
-  At the point of writing this. If you lost your MetaMask Mnemonic the only thing you can do is remove the extension all together and start again and
-  for the love of God and all that is holy please make sure you are <h1>NOT</h1> on the Mainnet and instead you are on a testnet like Rinkeby! VERY IMPORTANT!!!
+  At the point of writing this. If you lost your MetaMask Mnemonic the only thing you can do is remove the extension all together and start again and for the love of God and all that is holy please make sure you are <bold>NOT</bold> on the Mainnet and instead you are on a testnet like Rinkeby! VERY IMPORTANT!!!
   ![](images/Metamask.png)
 
   When creating your infura account make sure you switch away from the Mainnet and into the Rinkeby Network
