@@ -1,45 +1,123 @@
+# Privat
+
+Privat is a very simple password protection for Laravel projects. It's useful for websites in a staging state.
+
+![Screenshot](http://i.imgur.com/jz7TTmS.png)
+
+## Usage
+
+### Install with composer
+
+```sh
+composer require code16/privat
+```
+
+### Add Privat middleware in your project
+
+Add the following middleware in your project configuration.
+
+```php
+\Code16\Privat\PrivatMiddleware::class
+```
+
+Typically, you can add it at the end of the `'web'` key in your `$middlewareGroups` array (in `app/Http/Kernel`).
+
+### Set Privat config
+
+First create the privat config file:
+
+```sh
+php artisan vendor:publish --provider="Code16\Privat\PrivatServiceProvider"
+```
+
+And then edit the new `/config/privat.php` accordingly (nothing fancy); you can handle it with this keys in your `.env` file:
+
+- PRIVAT_RESTRICTED=true
+- PRIVAT_PASSWORD=mypassword
+
+### Exceptions
+
+The `except` config param is built like this:
+
+```php
+"except" => [
+    "hosts" => env("PRIVAT_EXCEPTED_HOSTS", ""),
+    "urls" => env("PRIVAT_EXCEPTED_URLS", "")
+]
+```
+
+The `urls` config key is meant to contain a comma separated list of URLs excluded from Privat; for instance `"/login,/admin"`.
+
+The `hosts` config key is the same, but for hosts (in case of a multi-hosts website).
+
+### Waiting page
+
+If you need to present a public waiting page, here's how: set the waiting page view name in the `waiting_view` config key (in `config/privat.php`):
+
+```php
+"waiting_view" => "demo.waiting"
+```
+
+From then, all requests without the Privat registration will be redirected to `/privat_waiting` which will render the configured view, except `/privat`, which will still present the Privat form.
+
+
+## License
+
+MIT
+
+
 # Web3-Inbox
-First of many Blockchain projects to practice stuff I learned and test them together with good programming pricinciples.
+First of many Blockchain projects to practice stuff I learned and test them together with good programming principles.
 
-This project contains but the simplest Smart Contract that does nothing more than save a save and display a message. The point was to be able to generate the 
-Ethereum side of an aplication from start to finish. 
+This project contains but the simplest Smart Contract that does nothing more than save a save and display a message. The point was to be able to generate the Ethereum side of an application from start to finish.
 
-Few questions to ask yourself..
+##Few questions to ask yourself..
 
-Is this the right way to do things in a professional/produciton enviroment? 
-  -> Absolutely NOT. There are much better ways of doing things which I will focus on in my next side projects!
+Is this the right way to do things in a professional/production environment?
+  `Absolutely NOT. There are much better ways of doing things which I will focus on in my next side projects!`
 
 Then what is the point of this project?
-  -> As mentioned above, we all need to start from somehwere. This projects aim to help me and whoever is interested in learning about Web3 
-     what a very basic setup for a defi up can look like. This space is changing rapidly and together with it we have new versions for crucial 
-     libraries like web3.js or traditional faucets that you would use to get some test Ether not working or permanently offline. 
-     
+  ` As mentioned above, we all need to start from somewhere. This projects aim to help me and whoever is interested in learning about Web3
+     what a very basic setup for a decentralized app can look like. This space is changing rapidly and together with it we have new versions for crucial libraries like web3.js or traditional faucets that you would use to get some test Ether not working or permanently offline.`
+
 How do I then test this?
-  -> Below you will find a basic setup guide. I will not go through everything, like how to set up Metamask, or how to make an Infura account cause there are 
-     many great content creators out there with step by step guides. I will though provide some things to look out for to save you some trouble!
+  `Below you will find a basic setup guide. I will not go through everything, like how to set up MetaMask, or how to make an Infura account cause there are many great content creators out there with step by step guides. I will though provide some things to look out for to save you some trouble!`
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+##Setup..
 
 After cloning the repository and directing yourself to it you will need to do a few things!
 
-<code>npm init</code>
+```sh
+npm init
+```
 
-<code>npm install solc web3 mocha ganache-cli @truffle/hdwallet-provider</code>
+```sh
+npm install
+```
 
-Update your test script in the package.json file to be 
-  "test": "mocha"
+<h3> Install dependancies </h3>
+```sh
+npm install solc web3 mocha ganache-cli @truffle/hdwallet-provider
+```
+
+Update your test script in the package.json file to be
+  ```js
+    "test": "mocha"
+  ```
 
 In deploy.js you need to update the provider with your own Metamask Mnemonic and Infura URL
-
+```js
 provider = new HDWalletProvider(
-  'YOUR_MNEMONIC',
+  'YOUR_METAMASK_MNEMONIC',
   'YOUR_INFURA_URL'
 );
+```
 
-NOTE*** 
-  At the point of writting this. If you lost your metamask Mnemonic the only thing you can do is remove the extension all together and start again and 
-  for the love of God and all that is holy please make sure you are not on the Mainnet and instead you are on a testnet like Rinkeby! VERY IMPORTANT!!!
+###NOTE***
+  At the point of writing this. If you lost your MetaMask Mnemonic the only thing you can do is remove the extension all together and start again and
+  for the love of God and all that is holy please make sure you are <h1>NOT</h1> on the Mainnet and instead you are on a testnet like Rinkeby! VERY IMPORTANT!!!
   ![](images/Metamask.png)
 
   When creating your infura account make sure you switch away from the Mainnet and into the Rinkeby Network
@@ -50,17 +128,19 @@ Then you need to run the compile script using the javascript file called 'compil
 <code>node compile.js</code>
 
 The deploy script using.. you guessed it the js file called 'deploy' (which is where you updated your infura link to Rinkbey and Metamask Mnemonic also switched to Rinkeby)
-<code>node deploy.js</code>
+```sh
+node deploy.js
+```
 
 That should generate the following:
-  Attempting to deploy from account 0x438...
-  
+  `Attempting to deploy from account 0x438...`
+
 Followed by a
-  Contract deployed to 0x8643...
+  `Contract deployed to 0x8643...`
 
 You can then go to:
   -> <code> https://rinkeby.etherscan.io/ </code>
-  
+
   enter the address you just got and search for the contract
   ![](images/EtehrScan.jpg)
 
