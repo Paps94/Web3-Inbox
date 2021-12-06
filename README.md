@@ -29,7 +29,6 @@ npm init
 npm install
 ```
 
-<h3> Install dependancies </h3>
 ```sh
 npm install solc web3 mocha ganache-cli @truffle/hdwallet-provider
 ```
@@ -47,7 +46,7 @@ provider = new HDWalletProvider(
 );
 ```
 
-###NOTE***
+<h3>Note</h3>
   At the point of writing this. If you lost your MetaMask Mnemonic the only thing you can do is remove the extension all together and start again and
   for the love of God and all that is holy please make sure you are <h1>NOT</h1> on the Mainnet and instead you are on a testnet like Rinkeby! VERY IMPORTANT!!!
   ![](images/Metamask.png)
@@ -56,8 +55,10 @@ provider = new HDWalletProvider(
   ![](images/InfuraNetworkSelect.jpg)
 
 
-Then you need to run the compile script using the javascript file called 'compile'
-<code>node compile.js</code>
+Then you need to run the compile script using the Javascript file called 'compile'
+```sh
+node compile.js
+```
 
 The deploy script using.. you guessed it the js file called 'deploy' (which is where you updated your infura link to Rinkbey and Metamask Mnemonic also switched to Rinkeby)
 ```sh
@@ -77,12 +78,12 @@ You can then go to:
   ![](images/EtehrScan.jpg)
 
 If you want to then test the Contract then what you have to do is go to
-  -> <code> http://remix.ethereum.org </code>
-  -> Create a new file and call it "Inbox.sol"
-  -> Go to "Deploy & run transactions"
-  -> Make sure you select "Injected Web3" (then a metamask verification will appear just accept to connect)
-  -> Your Metamask account should appear under "Account"
-  -> Almost there hang on.. at "At Address" you will paste there the address of the contract and click the "At address" button
+  - <code> http://remix.ethereum.org </code>
+  - Create a new file and call it "Inbox.sol"
+  - Go to "Deploy & run transactions"
+  - Make sure you select "Injected Web3" (then a metamask verification will appear just accept to connect)
+  - Your Metamask account should appear under "Account"
+  - Almost there hang on.. at "At Address" you will paste there the address of the contract and click the "At address" button
 
 If everything went smoothly you should be able to see the deployed contract under "Deployed Contracts"
   ![](images/Remix.jpg)
@@ -98,7 +99,7 @@ Go to:
     Enter your wallet address (testnet account address) - Metamask
     Check 0.1 test ETH
     Uncheck 10 test LINK
-    Check the Im Not a Robot verification
+    Check the I am Not a Robot verification (if you are not one :D )
     Click Send Request
 
 Do this a couple of times to get some FAKE ether sent to your Metamask
